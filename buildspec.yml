@@ -6,7 +6,7 @@ phases:
       java: corretto8
       nodejs: 12
     commands:
-      - npm install
+      - npm install -g react-native-cli
    build:
     commands:
       - npm i --save-dev @react-native-community/cli 
