@@ -1,20 +1,24 @@
 version: 0.2
+
 phases:
   install:
     runtime-versions:
       android: 29
       java: corretto8
       nodejs: 12
-   pre_build:
+
+  pre_build:
     commands:
-      - npm install 
-   build:
+      - npm install
+      
+  build:
     commands:
-      - npm i --save-dev @react-native-community/cli 
+      - npm i --save-dev @react-native-community/cli
       - cd android
       - ./gradlew clean
       - ./gradlew assembleRelease
+
 artifacts:
   files:
     - '**/*.apk'
-  
+  discard-paths: yes
