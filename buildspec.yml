@@ -3,7 +3,6 @@ phases:
   pre_build:
     commands:
       - npm install
-      - npm --version
    build:
     commands:
       - npm i --save-dev @react-native-community/cli 
