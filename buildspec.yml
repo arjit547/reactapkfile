@@ -1,30 +1,16 @@
 version: 0.2
 phases:
-  install:
-    runtime-versions:
-      
-      
-      nodejs: 12
-    commands:
-      - pwd
   pre_build:
     commands:
-      - echo Pre Build started on `date`
+      - npm install
       - npm --version
-      - npm install -g react-native-cli
-      - react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
-      - cd android
-      - pwd
-      
-  build:
+   build:
     commands:
-      - echo Build started on `date`
+      - npm i --save-dev @react-native-community/cli 
+      - cd android
       - ./gradlew clean
       - ./gradlew assembleRelease
-  post_build:
-    commands:
-      - echo Build completed on `date`
 artifacts:
   files:
-    - /app/build/outputs/apk/release/*.apk
+    - '**/*.apk'
   
