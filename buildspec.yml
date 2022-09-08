@@ -5,8 +5,9 @@ phases:
       android: 29
       java: corretto8
       nodejs: 12
+   pre_build:
     commands:
-      - npm install -g react-native-cli
+      - npm install 
    build:
     commands:
       - npm i --save-dev @react-native-community/cli 
