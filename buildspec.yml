@@ -15,6 +15,7 @@ phases:
     commands:
       - npm i --save-dev @react-native-community/cli
       - cd android
+      - chmod +x gradlew
       - ./gradlew clean
       - ./gradlew assembleRelease
 
